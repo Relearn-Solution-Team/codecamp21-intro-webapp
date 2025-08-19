@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>รายการหนังสือ - Book Library</title>
+    <link rel="stylesheet" href="../styles/library.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">📚 Book Library</h1>
+        <nav class="nav">
+          <a href="../index.html" class="nav-link">หน้าแรก</a>
+          <a href="index.html" class="nav-link active">รายการหนังสือ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <section class="books-header">
+          <h2>รายการหนังสือ</h2>
+          <div class="view-controls">
+            <button class="btn btn-secondary" id="cardViewBtn">
+              แสดงแบบการ์ด
+            </button>
+            <button class="btn btn-secondary" id="tableViewBtn">
+              แสดงแบบตาราง
+            </button>
+          </div>
+        </section>
+
+        <section class="books-container">
+          <!-- Loading state -->
+          <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>กำลังโหลดข้อมูล...</p>
+          </div>
+
+          <!-- Error state -->
+          <div id="error" class="error" style="display: none">
+            <p>เกิดข้อผิดพลาดในการโหลดข้อมูล</p>
+            <button class="btn btn-primary" onclick="loadBooks()">
+              ลองใหม่
+            </button>
+          </div>
+
+          <!-- Card view -->
+          <div id="cardView" class="books-grid" style="display: none">
+            <!-- Books will be loaded here -->
+          </div>
+
+          <!-- Table view -->
+          <div
+            id="tableView"
+            class="books-table-container"
+            style="display: none"
+          >
+            <table class="books-table">
+              <thead>
+                <tr>
+                  <th>ชื่อหนังสือ</th>
+                  <th>ISBN</th>
+                  <th>หมวดหมู่</th>
+                  <th>คะแนน</th>
+                  <th>รายการโปรด</th>
+                  <th>การจัดการ</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                <!-- Table rows will be loaded here -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Rating Modal -->
+    <div id="ratingModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>ให้คะแนนหนังสือ</h3>
+          <span class="close" onclick="closeRatingModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+          <p id="ratingBookTitle"></p>
+          <div class="rating-stars">
+            <span class="star" data-rating="1">⭐</span>
+            <span class="star" data-rating="2">⭐</span>
+            <span class="star" data-rating="3">⭐</span>
+            <span class="star" data-rating="4">⭐</span>
+            <span class="star" data-rating="5">⭐</span>
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn-primary" onclick="submitRating()">
+              บันทึกคะแนน
+            </button>
+            <button class="btn btn-secondary" onclick="closeRatingModal()">
+              ยกเลิก
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Book Library - ระบบสำหรับการเรียนรู้ Web Development</p>
+      </div>
+    </footer>
+
+    <script src="../js/book-data.js"></script>
+    <script src="../js/book-library.js"></script>
+  </body>
+</html>

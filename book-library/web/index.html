@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Library - ระบบจัดการหนังสือ</title>
+    <link rel="stylesheet" href="styles/library.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">📚 Book Library</h1>
+        <nav class="nav">
+          <a href="index.html" class="nav-link active">หน้าแรก</a>
+          <a href="list/index.html" class="nav-link">รายการหนังสือ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <section class="hero">
+          <h2>ยินดีต้อนรับสู่ระบบจัดการหนังสือ</h2>
+          <p>ระบบนี้สร้างขึ้นเพื่อการเรียนรู้การทำงานของ Web Application</p>
+          <div class="hero-buttons">
+            <a href="list/index.html" class="btn btn-primary"
+              >ดูรายการหนังสือ</a
+            >
+          </div>
+        </section>
+
+        <section class="features">
+          <h3>ฟีเจอร์ที่มี</h3>
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">📖</div>
+              <h4>แสดงรายการหนังสือ</h4>
+              <p>ดูข้อมูลหนังสือทั้งหมดในระบบ</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🃏</div>
+              <h4>แสดงแบบการ์ด</h4>
+              <p>ดูหนังสือในรูปแบบการ์ดที่สวยงาม</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📊</div>
+              <h4>แสดงแบบตาราง</h4>
+              <p>ดูข้อมูลในรูปแบบตารางที่ครบถ้วน</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">❤️</div>
+              <h4>เพิ่มรายการโปรด</h4>
+              <p>เพิ่มหนังสือที่ชอบลงในรายการโปรด</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">⭐</div>
+              <h4>ให้คะแนนหนังสือ</h4>
+              <p>ให้คะแนนหนังสือที่อ่านแล้ว</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="tech-info">
+          <h3>เทคโนโลยีที่ใช้</h3>
+          <div class="tech-grid">
+            <div class="tech-item">
+              <strong>Frontend:</strong> HTML, CSS, JavaScript
+            </div>
+            <div class="tech-item">
+              <strong>Backend:</strong> Node.js, Express.js
+            </div>
+            <div class="tech-item">
+              <strong>Database:</strong> In-memory (สำหรับ demo)
+            </div>
+            <div class="tech-item"><strong>API:</strong> RESTful API</div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 Book Library - ระบบสำหรับการเรียนรู้ Web Development</p>
+      </div>
+    </footer>
+
+    <script src="js/book-library.js"></script>
+  </body>
+</html>
