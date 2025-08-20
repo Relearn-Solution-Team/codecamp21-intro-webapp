@@ -22,12 +22,8 @@
         <section class="books-header">
           <h2>รายการหนังสือ</h2>
           <div class="view-controls">
-            <button class="btn btn-secondary" id="cardViewBtn">
-              แสดงแบบการ์ด
-            </button>
-            <button class="btn btn-secondary" id="tableViewBtn">
-              แสดงแบบตาราง
-            </button>
+            <button class="btn btn-secondary" id="cardViewBtn">แสดงแบบการ์ด</button>
+            <button class="btn btn-secondary" id="tableViewBtn">แสดงแบบตาราง</button>
           </div>
         </section>
 
@@ -41,9 +37,7 @@
           <!-- Error state -->
           <div id="error" class="error" style="display: none">
             <p>เกิดข้อผิดพลาดในการโหลดข้อมูล</p>
-            <button class="btn btn-primary" onclick="loadBooks()">
-              ลองใหม่
-            </button>
+            <button class="btn btn-primary" onclick="loadBooks()">ลองใหม่</button>
           </div>
 
           <!-- Card view -->
@@ -52,11 +46,7 @@
           </div>
 
           <!-- Table view -->
-          <div
-            id="tableView"
-            class="books-table-container"
-            style="display: none"
-          >
+          <div id="tableView" class="books-table-container" style="display: none">
             <table class="books-table">
               <thead>
                 <tr>
@@ -94,12 +84,8 @@
             <span class="star" data-rating="5">⭐</span>
           </div>
           <div class="modal-actions">
-            <button class="btn btn-primary" onclick="submitRating()">
-              บันทึกคะแนน
-            </button>
-            <button class="btn btn-secondary" onclick="closeRatingModal()">
-              ยกเลิก
-            </button>
+            <button class="btn btn-primary" onclick="handleRatingSubmit()">บันทึกคะแนน</button>
+            <button class="btn btn-secondary" onclick="closeRatingModal()">ยกเลิก</button>
           </div>
         </div>
       </div>

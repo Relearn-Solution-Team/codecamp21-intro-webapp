@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("Book Library Application loaded successfully!");
 
   // Add smooth scrolling for anchor links
-  const links = document.querySelectorAll('a[href^="#"]');
-  links.forEach((link) => {
+  const Booklinks = document.querySelectorAll('a[href^="#"]');
+  Booklinks.forEach((link) => {
     link.addEventListener("click", function (e) {
       e.preventDefault();
       const targetId = this.getAttribute("href");
@@ -141,9 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Add focus indicators for better accessibility
-  const focusableElements = document.querySelectorAll(
-    "a, button, input, textarea, select"
-  );
+  const focusableElements = document.querySelectorAll("a, button, input, textarea, select");
   focusableElements.forEach((element) => {
     element.addEventListener("focus", function () {
       this.style.outline = "2px solid #667eea";
@@ -158,8 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add performance monitoring
   if ("performance" in window) {
     window.addEventListener("load", function () {
-      const loadTime =
-        performance.timing.loadEventEnd - performance.timing.navigationStart;
+      const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
       console.log(`Page load time: ${loadTime}ms`);
     });
   }

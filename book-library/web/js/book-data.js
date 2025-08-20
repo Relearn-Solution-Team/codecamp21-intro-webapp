@@ -200,9 +200,7 @@ function renderBookCard(book) {
             <div class="book-category">${book.category_name}</div>
             <div class="book-rating">
                 <div class="stars">${renderStars(book.rating || 0)}</div>
-                <small>${
-                  book.rating ? `${book.rating}/5` : "ยังไม่มีคะแนน"
-                }</small>
+                <small>${book.rating ? `${book.rating}/5` : "ยังไม่มีคะแนน"}</small>
             </div>
             <div class="book-actions">
                 <button class="btn ${getFavouriteButtonClass(book.isFavourite)}"
@@ -210,9 +208,7 @@ function renderBookCard(book) {
                     ${getFavouriteButtonText(book.isFavourite)}
                 </button>
                 <button class="btn btn-primary"
-                        onclick="handleRatingClick(${book.id}, '${
-    book.title
-  }')">
+                        onclick="handleRatingClick(${book.id}, '${book.title}')">
                     ⭐ ให้คะแนน
                 </button>
             </div>
@@ -230,16 +226,12 @@ function renderBookTableRow(book) {
             <td>${book.isFavourite ? "❤️" : "🤍"}</td>
             <td>
                 <div class="table-actions">
-                    <button class="btn ${getFavouriteButtonClass(
-                      book.isFavourite
-                    )}"
+                    <button class="btn ${getFavouriteButtonClass(book.isFavourite)}"
                             onclick="handleFavouriteToggle(${book.id})">
                         ${book.isFavourite ? "ลบโปรด" : "เพิ่มโปรด"}
                     </button>
                     <button class="btn btn-primary"
-                            onclick="handleRatingClick(${book.id}, '${
-    book.title
-  }')">
+                            onclick="handleRatingClick(${book.id}, '${book.title}')">
                         ให้คะแนน
                     </button>
                 </div>
@@ -265,21 +257,28 @@ async function loadBooks() {
   try {
     currentBooks = await fetchBooks();
     hideLoading();
+    showCurrentView();
     renderBooks();
   } catch (error) {
     showError();
   }
 }
 
+function showCurrentView() {
+  if (currentView === "card") {
+    document.getElementById("cardView").style.display = "grid";
+    document.getElementById("tableView").style.display = "none";
+  } else {
+    document.getElementById("cardView").style.display = "none";
+    document.getElementById("tableView").style.display = "block";
+  }
+}
+
 // Initialize when DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Set up event listeners
-  document
-    .getElementById("cardViewBtn")
-    .addEventListener("click", () => switchView("card"));
-  document
-    .getElementById("tableViewBtn")
-    .addEventListener("click", () => switchView("table"));
+  document.getElementById("cardViewBtn").addEventListener("click", () => switchView("card"));
+  document.getElementById("tableViewBtn").addEventListener("click", () => switchView("table"));
 
   // Set up star rating event listeners
   document.querySelectorAll(".star").forEach((star) => {
@@ -296,11 +295,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Load books initially
-  loadBooks();
-
   // Set default view
   switchView("card");
+
+  // Load books initially
+  loadBooks();
 });
 
 // Global functions for HTML onclick
