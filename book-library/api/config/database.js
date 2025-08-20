@@ -92,51 +92,61 @@ async function initializeDatabase() {
     // Insert sample books if they don't exist
     const sampleBooks = [
       {
+        id: 1,
         ISBN: "978-0-7475-3269-9",
         title: "Harry Potter and the Philosopher's Stone",
         category_id: 1,
       },
       {
+        id: 2,
         ISBN: "978-0-7475-3849-3",
         title: "Harry Potter and the Chamber of Secrets",
         category_id: 1,
       },
       {
+        id: 3,
         ISBN: "978-0-7475-4624-5",
         title: "Harry Potter and the Prisoner of Azkaban",
         category_id: 1,
       },
       {
+        id: 4,
         ISBN: "978-0-7475-5100-3",
         title: "Harry Potter and the Goblet of Fire",
         category_id: 1,
       },
       {
+        id: 5,
         ISBN: "978-0-7475-8108-6",
         title: "Harry Potter and the Order of the Phoenix",
         category_id: 1,
       },
       {
+        id: 6,
         ISBN: "978-0-7475-8109-3",
         title: "Harry Potter and the Half-Blood Prince",
         category_id: 1,
       },
       {
+        id: 7,
         ISBN: "978-0-7475-8110-9",
         title: "Harry Potter and the Deathly Hallows",
         category_id: 1,
       },
       {
+        id: 8,
         ISBN: "978-0-7475-3269-9",
         title: "The Lord of the Rings: The Fellowship of the Ring",
         category_id: 2,
       },
       {
+        id: 9,
         ISBN: "978-0-7475-3269-9",
         title: "The Lord of the Rings: The Two Towers",
         category_id: 2,
       },
       {
+        id: 10,
         ISBN: "978-0-7475-3269-9",
         title: "The Lord of the Rings: The Return of the King",
         category_id: 2,
@@ -146,9 +156,9 @@ async function initializeDatabase() {
     for (const book of sampleBooks) {
       await connection.execute(
         `
-        INSERT IGNORE INTO books (ISBN, title, category_id) VALUES (?, ?, ?)
+        INSERT IGNORE INTO books (id,ISBN, title, category_id) VALUES (?,?, ?, ?)
       `,
-        [book.ISBN, book.title, book.category_id]
+        [book.id, book.ISBN, book.title, book.category_id]
       );
     }
 
