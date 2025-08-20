@@ -125,7 +125,7 @@ async function handleFavouriteToggle(bookId) {
 
 function handleRatingClick(bookId, bookTitle) {
   currentRatingBookId = bookId;
-  document.getElementById("ratingBookTitle").textContent = bookTitle;
+  document.getElementById("ratingBookTitle").textContent = String(bookTitle);
   document.getElementById("ratingModal").style.display = "flex";
 
   // Reset stars
@@ -208,7 +208,10 @@ function renderBookCard(book) {
                     ${getFavouriteButtonText(book.isFavourite)}
                 </button>
                 <button class="btn btn-primary"
-                        onclick="handleRatingClick(${book.id}, '${book.title}')">
+                        onclick="handleRatingClick(${book.id}, '${String(book.title).replace(
+    /'/g,
+    ""
+  )}')">
                     ⭐ ให้คะแนน
                 </button>
             </div>

@@ -94,7 +94,7 @@ async function initializeDatabase() {
       {
         id: 1,
         ISBN: "978-0-7475-3269-9",
-        title: "Harry Potter and the Philosopher's Stone",
+        title: "Harry Potter and the Philosopher Stone",
         category_id: 1,
       },
       {
