@@ -165,8 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Add error handling for broken links
-  const links = document.querySelectorAll("a");
-  links.forEach((link) => {
+  document.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", function (e) {
       const href = this.getAttribute("href");
       if (href && href.startsWith("http")) {

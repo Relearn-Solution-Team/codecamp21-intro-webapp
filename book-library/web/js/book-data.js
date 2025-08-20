@@ -106,7 +106,7 @@ function renderStars(rating) {
 }
 
 function getFavouriteButtonText(isFavourite) {
-  return isFavourite ? "❤️ ลบจากโปรด" : "🤍 เพิ่มโปรด";
+  return isFavourite ? "❤️ ลบรายการโปรด" : "🤍 เพิ่มรายการโปรด";
 }
 
 function getFavouriteButtonClass(isFavourite) {
@@ -234,7 +234,7 @@ function renderBookTableRow(book) {
                       book.isFavourite
                     )}"
                             onclick="handleFavouriteToggle(${book.id})">
-                        ${book.isFavourite ? "ลบโปรด" : "เพิ่มโปรด"}
+                        ${book.isFavourite ? "ลบรายการโปรด" : "เพิ่มรายการโปรด"}
                     </button>
                     <button class="btn btn-primary"
                             onclick="handleRatingClick(${book.id}, '${
